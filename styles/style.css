@@ -1,0 +1,403 @@
+*{
+    box-sizing: border-box;
+}
+
+/* .main_grid{
+
+   display: flex;
+   justify-content: center;
+   margin-bottom: 60px;
+   
+} */
+
+.grid_container{
+    display: grid;
+    width: 100vw;
+    height: 50vh;
+    background-color: aqua;
+    gap: 7px;
+    padding: 7px;
+    grid-template-areas:
+    'menu head head head head head'
+    'menu main main main aside aside'
+    'menu footer footer footer footer footer'
+    ;
+  
+}
+.grid_container > div{
+    border: 2px solid red;
+    background-color: yellow;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+}
+
+.header{
+    grid-area: head;
+}
+.main{
+    grid-area: main;
+}
+.menu{
+    grid-area: menu;
+}
+.aside{
+    grid-area: aside;
+}
+.footer{
+    grid-area: footer;
+}
+
+/* using grid-colum & row size */
+
+.grid1_container{
+background-color: aqua;
+display:grid;
+gap: 5px;
+padding: 7px;
+grid-template-columns: repeat(5,1fr);
+grid-template-rows: 80px;
+width: 100vw;
+height: 55vh;
+
+
+}
+
+.grid1_container> div{
+    border: 2px solid black;
+    border-radius: 7px;
+    background-color:tomato;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid_1{
+grid-column:2/ span 4 ;
+}
+
+.grid_2{
+    grid-column:2/ span 2 ;
+}
+
+.grid_3{
+    grid-column:1/  2 ;
+    grid-row: 1 /  4;
+
+    }
+
+    .grid_4{
+        grid-column:4 / 6 ;
+        grid-rows: 2 / 3;
+        }
+
+        
+    .grid_5{
+        grid-column:2 / 6 ;
+        
+        }
+
+        /* here i create responsive layout of multiple devices */
+
+
+       
+        /* calculator design using grid and responsive */
+
+        .cla_container{
+            display: grid;
+            grid-template-columns:repeat(9,1fr);
+            gap: 5px;
+            width: 67vw;
+            height: 55vh;
+            margin-bottom: 60px;
+          
+        }
+        
+        .cla_container  .cal_child{
+background-color: aqua;
+border: 2px solid red;
+border-radius: 7px;
+display: flex;
+justify-content: center;
+align-items: center;
+        }
+
+    @media screen  and (max-width:580px){
+        .cla_container{
+            grid-template-columns:  auto auto auto auto auto ;
+            /* grid-template-rows: 60px  60px 60px 60px 60px 60px 60px; */
+            background-color: brown;
+            width: 100vw;
+
+        }
+        .cal_child{
+            font-size: 2em;
+
+         
+        }
+    }
+
+
+    @media screen and (max-width:1180px) {
+        .grid_container{
+            background-color: red;
+      
+        }
+        .grid_container >div{
+            background-color: blue;
+        }
+    }
+
+    @media screen  and (max-width:750px) {
+        .grid_container{
+            background-color: slategrey;
+
+        }
+        .grid_container >div{
+            background-color:black;
+        }
+    }
+    
+
+    @media screen and (max-width:580px) {
+        .grid_container{
+            background-color: white;
+      
+        }
+        .grid_container >div{
+            background-color:tomato;
+        }
+    }
+
+
+    /* image display flex and grid and responsive */
+
+    .img_container{
+      width: 100vw;
+        display: grid;
+        grid-template-columns: repeat(8,1fr) ;
+        
+  
+    }
+    .food_con{
+        border: 2px solid red;
+        padding: 7px;
+        text-align: center;
+    }
+    .food_img{
+       width: 100%;
+    }
+
+   /* @media screen and (max-width:1120px) {
+    .img_container{
+        grid-template-columns: repeat(4,25%);
+    }
+    .food_con{
+       background-color: yellow;
+    }
+} */
+
+    @media screen and (max-width:900px) {
+        .img_container{
+            grid-template-columns: repeat(3,33%);
+        }
+        .food_con{
+            background-color: brown;
+        }
+    }
+
+    @media screen and (max-width:580px) {
+        .img_container{
+            grid-template-columns: auto;
+        }
+        .food_con{
+            background-color: black;
+            color: white;
+        }
+    
+    }
+
+    /* module practices */
+
+    .desktop_container{
+        width: 80vw;
+        height: 80vh;
+        border: 2px solid black;
+        display: flex;
+        gap: 7px;
+      padding: 5px;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 60px;
+      
+
+    }
+  
+    .left{
+        width: 40%;
+        height: 80vh;
+        background-color: aqua;
+        border-radius: 10px;
+
+    }
+    .right{
+        width: 60%;
+        height: 80vh;
+        background-color: red;
+        border-radius: 10px;
+    }
+
+    /* responsive */
+
+    @media screen and (max-width:576px) {
+        .desktop_container{
+            
+            flex-direction: column-reverse;
+            width: 100%;
+            background-color: brown;
+        
+        }
+        .desktop_container >div{
+            width: 80vh;
+            text-align: center;
+            
+           
+        }
+    }
+
+    /* task2 */
+    .task_con{
+        width: 80vw;
+        height: 80vh;
+        border: 2px solid red;
+        background-color: aqua;
+        display: grid;
+   grid-template-areas:   
+   'atik atik atik rony rony '
+   'atik atik atik faysal masud'
+   
+   ;
+         gap: 5px;
+         margin-bottom: 60px;
+    }
+    .task_con >div{
+        background-color: yellow;
+        
+    }
+
+    .div_1{
+grid-area: atik;
+    }
+    
+    .div_2{
+grid-area: rony;
+    }
+    .div_3{
+grid-area: faysal;
+    }
+    .div_4{
+grid-area: masud;
+    }
+
+
+/* responsive */
+
+@media screen and (max-width:576px) {
+    .task_con{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+    .task_con >div{
+        text-align: center;
+        background-color:chartreuse;
+    }
+}
+
+/* task3 */
+
+
+.food_img_chi{
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 90vw;
+    border: 2px solid blue;
+    padding: 8px;
+
+    margin-bottom: 60px;
+}
+.food_img_chi >div{
+    width: 90%;
+    margin: 0 auto;
+margin: 7px;
+   
+  
+}
+
+/* responsive */
+
+@media screen  and (max-width:565px) {
+    .food_img_chi{
+        grid-template-columns: auto;
+        text-align: center;
+        padding: 7px;
+
+    }
+    .btn_food{
+        margin-bottom: 30px;
+        background-color: blue;
+    }
+}
+
+
+/* task4 */
+
+.task5_container{
+    border: 2px solid black;
+    width: 100vw;
+padding: 7px;
+
+
+}
+ .task5_container >div{
+   width: 100%;
+  
+   gap: 50px;
+   
+ }
+
+ .task5_container> .top{
+display: flex;
+width: 80%;
+
+ }
+
+ .task5_container> .bottom{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 80%;
+    
+     }
+    
+
+
+/* responsive */
+
+@media screen and (max-width:576px) {
+    .task5_container> .top{
+      
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        
+         }
+         .task5_container .bottom{
+            /* display: flex; */
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+         }
+}
